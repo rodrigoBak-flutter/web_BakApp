@@ -5,7 +5,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.pink,
+      color: Colors.lightBlue,
       child: Center(
         child: FittedBox(
           fit: BoxFit.contain,

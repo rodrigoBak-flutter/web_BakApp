@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:web_porfolio_bakapp/providers/page_provider.dart';
@@ -19,13 +19,14 @@ class _CustomAppMenuState extends State<CustomAppMenu>
   void initState() {
     super.initState();
 
-    controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 200));
   }
 
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<PageProvider>(context, listen: false);
+    final size = MediaQuery.of(context).size;
 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
@@ -43,7 +44,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
         },
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          width: 150,
+          width: size.width * 0.11,
           height: isOpen ? 308 : 50,
           color: Colors.black,
           child: Column(
@@ -70,7 +71,7 @@ class _CustomAppMenuState extends State<CustomAppMenu>
                     delay: 120,
                     text: 'Location',
                     onPressed: () => pageProvider.goTo(4)),
-                SizedBox(height: 8)
+                const SizedBox(height: 8)
               ]
             ],
           ),

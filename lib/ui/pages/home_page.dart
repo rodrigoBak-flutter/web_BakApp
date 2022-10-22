@@ -16,7 +16,11 @@ class HomePage extends StatelessWidget {
         child: Stack(
           children: [
             _HomeBody(),
-            Positioned(right: 20, top: 20, child: CustomAppMenu()),
+            Positioned(
+              right: 20,
+              top: 20,
+              child: CustomAppMenu(),
+            ),
           ],
         ),
       ),
@@ -24,11 +28,13 @@ class HomePage extends StatelessWidget {
   }
 
   BoxDecoration buildBoxDecoration() => const BoxDecoration(
-      gradient: LinearGradient(
+        gradient: LinearGradient(
           colors: [Colors.pink, Colors.purpleAccent],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          stops: [0.5, 0.5]));
+          stops: [0.5, 0.5],
+        ),
+      );
 }
 
 class _HomeBody extends StatelessWidget {
